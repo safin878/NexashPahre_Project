@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NexaSphere</title>
-    <link
-      rel="shortcut icon"
-      href="./images/joinforum.png"
-      type="image/x-icon"
-    />
-
+    <link rel="shortcut icon" href="./images/my-logo.png" type="image/x-icon" />
     <!-- Daisy UI and tailwind css scripts -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -42,7 +37,7 @@
         font-family: "Mulish", sans-serif;
       }
       .inter {
-        font-family: "Mulish", sans-serif;
+        font-family: "inter", sans-serif;
       }
     </style>
   </head>
@@ -157,7 +152,72 @@
         </div>
       </section>
       <!-- Let’s Discuss section -->
-      <section></section>
+      <section class="mt-24">
+        <!-- title -->
+        <div class="text-center space-y-6 mb-12">
+          <h3 class="text-4xl font-black">Let’s Discuss</h3>
+          <p class="text-lg font-medium inter text-gray-500">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-5">
+          <!-- cards -->
+          <div class="card card-side bg-[#F3F3F5] lg:col-span-2">
+            <div class="mt-8 ml-8 relative">
+              <img
+                class="h-16 rounded-xl"
+                src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg"
+                alt="Movie"
+              />
+              <div
+                class="h-4 w-4 bg-[#10B981] absolute rounded-full -right-1 -top-1"
+              ></div>
+            </div>
+            <div class="card-body inter">
+              <div class="flex items-center gap-3 text-sm">
+                <h5>#Music</h5>
+                <h5>Author : Awlad Hossain</h5>
+              </div>
+              <h2 class="text-xl font-bold">New movie is released!</h2>
+              <p class="text-gray-500">
+                Click the button to watch on Jetflix app.
+              </p>
+              <hr class="border-dashed border" />
+              <div class="flex items-center justify-between">
+                <div class="flex gap-5">
+                  <div class="flex items-center gap-2">
+                    <img src="./images/Flag.png" alt="" />
+                    <h5 class="text-gray-500">560</h5>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <img src="./images/Flag.png" alt="" />
+                    <h5 class="text-gray-500">560</h5>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <img src="./images/Flag.png" alt="" />
+                    <h5 class="text-gray-500">560</h5>
+                  </div>
+                </div>
+                <button class="btn rounded-full p-0 min-h-0 h-[30px]">
+                  <img src="./images/email-1.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- title section -->
+          <div class="bg-[#12132D0D] rounded-xl p-6 h-fit">
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-bold">Title</h2>
+              <div class="flex items-center gap-2">
+                <img src="./images/read.png" alt="" />
+                <h4 class="text-gray-500">Mark as read (4)</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- join our forum section -->
       <section
         class="my-24 flex flex-col gap-10 lg:flex-row bg-[#12132D] text-white rounded-[2rem] px-7 py-10 lg:p-24"
