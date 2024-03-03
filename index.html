@@ -47,9 +47,9 @@
     </style>
   </head>
   <body class="mulish">
-    <header class="container mx-auto my-5 mb-10 p-4">
+    <header class="container mx-auto my-5 mb-10">
       <!-- Navbar codes -->
-      <div class="navbar bg-base-100">
+      <div class="navbar bg-base-100 pl-0">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -104,7 +104,7 @@
         </div>
       </div>
     </header>
-    <main class="container mx-auto p-4">
+    <main class="container mx-auto p-4 lg:p-0">
       <!-- Banner section -->
       <section
         class="px-6 py-10 lg:p-24 flex gap-10 flex-col lg:flex-row justify-between bg-[#12132D] rounded-[2.25rem] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-cover"
@@ -112,7 +112,11 @@
         <div class="text-white space-y-6">
           <h2 class="text-6xl font-black">
             Welcome to the <br />
-            <span>ReTro</span> Forum
+            <span
+              class="bg-gradient-to-r from-[#797DFC] to-[#797DFC1A] text-transparent bg-clip-text"
+              >NexaSphere</span
+            >
+            Forum
           </h2>
 
           <p class="text-xl font-light">
@@ -174,6 +178,35 @@
           <img src="./images/joinforum.png" alt="" />
         </div>
       </section>
+      <!-- Latest Posts section -->
+      <section>
+        <div class="text-center space-y-6">
+          <h3 class="text-4xl font-black">Latest Posts</h3>
+          <p class="text-lg font-medium">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div class="grid grid-cols-1 mt-12 mb-24 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card card-compact bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="p-4 rounded-3xl"
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer footer-center lg:p-10 lg:pt-16 py-16 bg-[#12132D0D]">
       <aside>
@@ -187,5 +220,6 @@
       <hr class="w-full border-[#30325E1A]" />
       <p>2017, All Rights Reserved.</p>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
