@@ -1,11 +1,11 @@
 // Let's discuss section scripts
-const loadDiscussSection = async () => {
+const loadDiscussSection = async (searchText = "") => {
   const response = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
+    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
   );
   const { posts } = await response.json();
   const discussContainer = document.getElementById("discuss-cards-container");
-
+  discussContainer.textContent = "";
   posts.forEach((post) => {
     let isActive = "";
 
@@ -83,7 +83,6 @@ const loadDiscussSection = async () => {
         btn.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[3]
           .innerText;
       const readContainer = document.getElementById("read-container");
-
       const div = document.createElement("div");
       div.innerHTML = `
       <div class="flex bg-white rounded-2xl p-4 gap-4">
@@ -98,6 +97,12 @@ const loadDiscussSection = async () => {
       readContainer.appendChild(div);
     });
   });
+};
+// handle search
+const handleSearch = () => {
+  const input = document.getElementById("search-field").value;
+  loadDiscussSection(input);
+  console.log(input);
 };
 loadDiscussSection();
 // Latest post section scripts
