@@ -68,7 +68,7 @@
               class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li><a>Home</a></li>
-              <li><a>Tooltip</a></li>
+              <li><a>Edit</a></li>
               <li><a>Add</a></li>
               <li><a>Flag</a></li>
             </ul>
@@ -81,7 +81,7 @@
             <button class="btn rounded-full p-3" title="Home">
               <img src="./images/Home.png" alt="" />
             </button>
-            <button class="btn rounded-full p-3" title="Tooltip">
+            <button class="btn rounded-full p-3" title="Edit">
               <img src="./images/Tooltip.png" alt="" />
             </button>
             <button class="btn rounded-full p-3" title="Add">
@@ -105,7 +105,7 @@
         class="px-6 py-10 lg:p-24 flex gap-10 flex-col lg:flex-row justify-between bg-[#12132D] rounded-[2.25rem] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-cover"
       >
         <div class="text-white space-y-6">
-          <h2 class="text-6xl font-black">
+          <h2 class="lg:text-6xl text-4xl font-black">
             Welcome to the <br />
             <span
               class="bg-gradient-to-r from-[#797DFC] to-[#797DFC1A] text-transparent bg-clip-text"
@@ -164,57 +164,23 @@
         </div>
         <div class="grid lg:grid-cols-3 gap-5">
           <!-- cards -->
-          <div class="card card-side bg-[#F3F3F5] lg:col-span-2">
-            <div class="mt-8 ml-4 lg:ml-8 relative">
-              <img
-                class="h-16 rounded-xl"
-                src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg"
-                alt="Movie"
-              />
-              <div
-                class="h-4 w-4 bg-[#10B981] absolute rounded-full -right-1 -top-1"
-              ></div>
-            </div>
-            <div class="card-body inter">
-              <div class="lg:flex items-center gap-3 text-sm">
-                <h5>#Music</h5>
-                <h5>Author : Awlad Hossain</h5>
-              </div>
-              <h2 class="text-xl font-bold">New movie is released!</h2>
-              <p class="text-gray-500">
-                Click the button to watch on Jetflix app.
-              </p>
-              <hr class="border-dashed border" />
-              <div class="lg:flex items-center justify-between">
-                <div class="flex gap-5">
-                  <div class="flex items-center gap-2">
-                    <img src="./images/Flag.png" alt="" />
-                    <h5 class="text-gray-500">560</h5>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <img src="./images/Flag.png" alt="" />
-                    <h5 class="text-gray-500">560</h5>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <img src="./images/Flag.png" alt="" />
-                    <h5 class="text-gray-500">560</h5>
-                  </div>
-                </div>
-                <div class="flex justify-end items-center">
-                  <button class="btn rounded-full p-0 min-h-0 h-[30px]">
-                    <img src="./images/email-1.png" alt="" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          <div
+            id="discuss-cards-container"
+            class="lg:col-span-2 space-y-4"
+          ></div>
           <!-- title section -->
-          <div class="bg-[#12132D0D] rounded-xl p-6 h-fit">
+          <div
+            id="read-container"
+            class="bg-[#12132D0D] rounded-xl p-6 h-fit space-y-4"
+          >
             <div class="flex items-center justify-between">
               <h2 class="text-xl font-bold">Title</h2>
               <div class="flex items-center gap-2">
                 <img src="./images/read.png" alt="" />
-                <h4 class="text-gray-500">Mark as read (4)</h4>
+                <h4 class="text-gray-500">
+                  Mark as read (<span id="counter">0</span>)
+                </h4>
               </div>
             </div>
           </div>
