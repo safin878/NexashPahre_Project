@@ -1,30 +1,29 @@
 // Let's discuss section scripts
 const loadDiscussSection = async (searchText = "") => {
-  const response = await fetch(
-    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
-  );
-  const { posts } = await response.json();
-  const discussContainer = document.getElementById("discuss-cards-container");
-  discussContainer.textContent = "";
-  posts.forEach((post) => {
-    let isActive = "";
-
-    if (post.isActive === true) {
-      isActive = `<div
+  setTimeout(async () => {
+    const response = await fetch(
+      `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
+    );
+    const { posts } = await response.json();
+    const discussContainer = document.getElementById("discuss-cards-container");
+    discussContainer.textContent = "";
+    posts.forEach((post) => {
+      let isActive = "";
+      if (post.isActive) {
+        isActive = `<div
       id="is-active"
       class="h-4 w-4 bg-[#10B981] border-2 border-white absolute rounded-full -right-1 -top-1"
     ></div>`;
-    } else {
-      isActive = `<div
+      } else {
+        isActive = `<div
       id="is-active"
       class="h-4 w-4 bg-[#FF3434] border-2 border-white absolute rounded-full -right-1 -top-1"
     ></div>`;
-    }
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div
-            
-            class="card card-side bg-[#F3F3F5]"
+      }
+      const div = document.createElement("div");
+
+      div.innerHTML = `
+    <div class="card card-side bg-[#F3F3F5]"
           >
             <div class="mt-8 ml-4 lg:ml-8 relative">
               <img
@@ -67,24 +66,25 @@ const loadDiscussSection = async (searchText = "") => {
               </div>
             </div>
           </div>`;
-    discussContainer.appendChild(div);
-  });
 
-  const button = document.querySelectorAll(".read-btn");
-  let count = 0;
-  button.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      count++;
-      document.getElementById("counter").innerText = count;
-      const title =
-        btn.parentNode.parentNode.parentNode.childNodes[3].innerText;
+      discussContainer.appendChild(div);
+    });
 
-      const comments =
-        btn.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[3]
-          .innerText;
-      const readContainer = document.getElementById("read-container");
-      const div = document.createElement("div");
-      div.innerHTML = `
+    const button = document.querySelectorAll(".read-btn");
+    let count = 0;
+    button.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        count++;
+        document.getElementById("counter").innerText = count;
+        const title =
+          btn.parentNode.parentNode.parentNode.childNodes[3].innerText;
+
+        const comments =
+          btn.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[3]
+            .innerText;
+        const readContainer = document.getElementById("read-container");
+        const div = document.createElement("div");
+        div.innerHTML = `
       <div class="flex bg-white rounded-2xl p-4 gap-4">
               <h3 class="font-semibold">
                 ${title}
@@ -94,16 +94,33 @@ const loadDiscussSection = async (searchText = "") => {
                 <h5>${comments}</h5>
               </div>
             </div>`;
-      readContainer.appendChild(div);
+        readContainer.appendChild(div);
+      });
     });
-  });
+
+    toggleLoader(false);
+  }, 2000);
 };
 // handle search
 const handleSearch = () => {
+  toggleLoader(true);
   const input = document.getElementById("search-field").value;
   loadDiscussSection(input);
+
   console.log(input);
 };
+// loader function
+const toggleLoader = (isLoading) => {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  let container = document.getElementById("discuss-cards-container");
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+    container.innerHTML = "";
+  } else {
+    loadingSpinner.classList.add("hidden");
+  }
+};
+
 loadDiscussSection();
 // Latest post section scripts
 const loadLatestPosts = async () => {
